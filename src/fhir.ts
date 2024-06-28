@@ -1,3 +1,3 @@
 import axios from "axios";
 
-export const fhir = axios.create({baseURL: "http://snf-895198.vm.okeanos.grnet.gr:8081/fhir"}) ;
+export const fhir = axios.create({baseURL: "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/"}) ;

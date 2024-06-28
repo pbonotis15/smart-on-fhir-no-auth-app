@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import { fhir } from "./fhir";
     import { navigate } from "svelte-routing";
+    import FHIR from "fhirclient";
 
     let loading: boolean = false;
 
@@ -15,7 +16,19 @@
         const r = await fhir.put(`/Patient/${id}`, { ...e.detail, id });
         console.log(r);
       } else {
-        const r = await fhir.post("/Patient", e.detail);
+        //const r = await fhir.post("/Patient", e.detail);
+        const client = await FHIR.oauth2.ready();
+        const tokenResponse = client.getState().tokenResponse;
+        console.log('Access Token:', tokenResponse.access_token); // Log the access token
+        const newPatient = {
+                resourceType: "Patient",
+                ...e.detail
+            };
+            console.log('New Patient Resource:', JSON.stringify(newPatient, null, 2));
+            const r = await client.create({
+          resourceType: "Patient",
+          body: newPatient
+        });
         console.log(r);
       }
       loading = false;
