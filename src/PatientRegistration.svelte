@@ -5,8 +5,8 @@
 
     let loading: boolean = false;
 
-    export let id;
-    let form;
+    export let id: any;
+    let form: { import: (arg0: any) => void; };
     console.log(id);
 
     async function handleSubmit(e: any) {

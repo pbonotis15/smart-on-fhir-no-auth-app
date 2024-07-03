@@ -3,7 +3,7 @@
     import { fhir } from "./fhir";
     import { Link } from "svelte-routing";
 
-    let data = [];
+    let data: any[] = [];
     onMount(async () => {
         const r = await fhir.get('/Patient');
         console.log(r);
