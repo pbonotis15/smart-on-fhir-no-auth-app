@@ -7,13 +7,12 @@
   import PatientRegistration from './PatientRegistration.svelte'
   import Layout from "./Layout.svelte";
   import List from "./list.svelte";
-  import index from "./index.svelte"
 </script>
 
 <Router>
   <Layout>
     <Route path="/" component={List}></Route>
-    <Route path="index" component={index}/>
+   <!-- <Route path="index" component={index}/>-->
     <Route path="patient" component={PatientRegistration} />
     <Route path="patient/:id" component={PatientRegistration} />
   </Layout>
