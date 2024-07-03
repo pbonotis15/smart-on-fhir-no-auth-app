@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { fhir } from "./fhir";
+    import { fhir } from "../fhir";
     import { Link } from "svelte-routing";
 
     let data: any[] = [];

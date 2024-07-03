@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { fhir } from "./fhir";
+    import { fhir } from "../fhir";
     import { navigate } from "svelte-routing";
 
     let loading: boolean = false;

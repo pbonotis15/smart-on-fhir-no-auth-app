@@ -4,9 +4,9 @@
   import "medblocks-ui/dist/shoelace";
   //import "shoelace-style/shoelace/themes/base.css";
   import { Router, Link, Route } from "svelte-routing";
-  import PatientRegistration from './PatientRegistration.svelte'
-  import Layout from "./Layout.svelte";
-  import List from "./list.svelte";
+  import PatientRegistration from './lib/PatientRegistration.svelte'
+  import Layout from "./lib/Layout.svelte";
+  import List from "./lib/list.svelte";
 </script>
 
 <Router>
