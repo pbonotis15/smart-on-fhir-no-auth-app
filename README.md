@@ -1,47 +1,78 @@
-# Svelte + TS + Vite
+# Svelte FHIR App
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+## Overview
 
-## Recommended IDE Setup
+This project is a Svelte application that interfaces with a FHIR server to manage patient data. It leverages the Medblocks UI components and Svelte Routing for building a responsive and interactive UI. The app follows a tutorial by Sidharth Ramesh from MedBlocks on YouTube.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Features
 
-## Need an official Svelte framework?
+- List and display patients from a FHIR server.
+- Register new patients and update existing patient information.
+- Responsive design using Tailwind CSS.
+- Easy navigation with Svelte Routing.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+## Project Structure
 
-## Technical considerations
+- `App.svelte`: Main entry point of the application, sets up routing.
+- `list.svelte`: Component to fetch and display a list of patients.
+- `PatientRegistration.svelte`: Component to handle patient registration and updates.
+- `Layout.svelte`: Layout component providing a container for other components.
+- `fhir.ts`: Configuration of the Axios instance to interact with the FHIR server.
 
-**Why use this over SvelteKit?**
+## Dependencies
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+- `svelte`: Core framework for building the app.
+- `svelte-routing`: For handling routing within the application.
+- `medblocks-ui`: UI components for building forms and other UI elements.
+- `axios`: For making HTTP requests to the FHIR server.
+- `tailwindcss`: For responsive and utility-first CSS styling.
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+## Installation
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+1. **Clone the repository:**
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+2. **Install dependencies:**
 
-**Why include `.vscode/extensions.json`?**
+    ```bash
+    npm install
+    ```
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+3. **Run the application:**
 
-**Why enable `allowJs` in the TS template?**
+    ```bash
+    npm run dev
+    ```
 
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
+## Usage
 
-**Why is HMR not preserving my local component state?**
+- Navigate to the root URL to see the list of patients.
+- Click on "New Patient" to register a new patient.
+- Click on a patient’s name to view and update their information.
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
+## Configuration
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+- The FHIR server base URL is configured in `fhir.ts` file. Change this URL if your FHIR server is hosted at a different location.
 
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+    ```javascript
+    export const fhir = axios.create({
+        baseURL: "http://your-fhir-server-url"
+    });
+    ```
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License.
