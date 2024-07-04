@@ -1,4 +1,4 @@
-# Svelte FHIR App
+# Svelte FHIR App with no authentication, connecting to an open FHIR server
 
 ## Overview
 
