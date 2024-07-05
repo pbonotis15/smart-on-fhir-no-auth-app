@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a Svelte application that interfaces with a FHIR server to manage patient data. It leverages the Medblocks UI components and Svelte Routing for building a responsive and interactive UI. The app follows a tutorial by Sidharth Ramesh from MedBlocks on YouTube.
+This project is a Svelte application that interfaces with a FHIR server to manage patient data. It leverages the Medblocks UI components and Svelte Routing for building a responsive and interactive UI. 
 
 ## Features
 
